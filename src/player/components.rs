@@ -2,5 +2,6 @@ use bevy::prelude::*;
 
 #[derive(Component)]
 pub struct Player {
-    pub speed: f32
+    pub speed: f32,
+    pub angle: f32
 }

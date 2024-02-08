@@ -1,8 +1,8 @@
 use bevy::prelude::*;
 
 mod systems;
-mod components;
-mod events;
+pub mod components;
+pub mod events;
 
 use systems::*;
 use events::*;
