@@ -28,6 +28,6 @@ pub struct BulletPlugin;
 
 impl Plugin for BulletPlugin {
     fn build(&self, app: &mut App) {
-        app.add_systems(Update, (check_for_shoot, update_bullets));
+        app.add_systems(Update, (check_for_shoot, update_bullets, check_hit));
     }
 }

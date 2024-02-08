@@ -62,9 +62,9 @@ pub fn player_movement(mut player: Query<(&mut Player, &mut Transform), With<Pla
     }
 }
 
-pub fn check_shoot(mut evw: EventWriter<ShootEvent>, player: Query<(&Player, &Transform), With<Player>>, mouse: Res<Input<MouseButton>>) {
+pub fn check_shoot(mut evw: EventWriter<ShootEvent>, player: Query<(&Player, &Transform), With<Player>>, keyboard: Res<Input<KeyCode>>, mouse: Res<Input<MouseButton>>) {
     if let Ok((player, transform)) = player.get_single() {
-        if mouse.just_released(MouseButton::Left) {
+        if mouse.just_released(MouseButton::Left) || keyboard.just_released(KeyCode::Space) {
             evw.send(ShootEvent {transform: *transform, angle: player.angle });
         }
     }
